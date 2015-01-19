@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>ProDB &hearts; searchkick</title>
+
+    <meta name="description" content="troubleshooting search in ProDB">
+    <meta name="author" content="Stephanie Feddern">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <!--<link rel="stylesheet" href="css/theme/default.css" id="theme">-->
+    <link rel="stylesheet" href="css/theme/akra.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <img src="img/proDB.jpg" />
+          <h2>
+            &hearts;<br />searchkick
+          </h2>
+        </section>
+
+        <section>
+          <h2>Meet the presenter</h2>
+           <div class="circular inline-block" style="background: url('img/me.jpg');"></div>
+        </section>
+
+        <section>
+          <h2>Agenda</h2>
+          <div class="square3 red">
+            <h1>ProDB</h1>
+            <p>What's that?<br />What was the problem?<br />How we solved it<br /></p>
+          </div>
+          <div class="square3 green">
+            <h1>Searchkick</h1>
+            <p>How you implement searchkick in your project<br />(using code examples of ProDB)</p>
+          </div>
+          <div class="square3 blue">
+            <h1>References</h1>
+            <p>Literature or links used</p>
+          </div>
+        </section>
+
+        <section>
+          <section>
+            <img src="img/proDB.jpg" />
+            <h2>What's that?</h2>
+          </section>
+
+          <section>
+            <img src="img/proDB.jpg" />
+            <h2>What was the problem?</h2>
+            <img src="img/elastic-search-logo.jpg" /><br />
+            &darr;<br />
+            <img src="img/tire.png" />
+          </section>
+
+          <section>
+            <img src="img/proDB.jpg" />
+            <h2>How we solved it</h2>
+          </section>
+
+          <section>
+            <h3>Solution: Part 1</h3>
+            <p><img src="img/elastic-search-logo.jpg" /><br />Version &gt;= 1.0.2</p>
+          </section>
+
+          <section>
+            <h3>Solution: Part 2</h3>
+            <img src="img/tire.png" />
+            <p class="roll-in">
+              Option 1: further development of Tire on our own
+            </p>
+            <p class="roll-in">
+              Option 2: exchanging Tire with an alternative
+            </p>
+          </section>
+
+          <section>
+            <h3>Our decision on solution part 2</h3>
+            <img src="img/reinvent_wheel.jpg" />
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>How to implement searchkick in your project</h2>
+          </section>
+
+          <section>
+            <h3>What you need</h3>
+            <img src="img/elastic-search-logo.jpg" />
+            <p>latest version = less bugs</p>
+          </section>
+
+          <section>
+            <h3>Gemfile</h3>
+            <img src="img/gemfile.png" />
+            <p>add searchkick to your Gemfile</p>
+          </section>
+
+          <section>
+            <h3>Test configuration</h3>
+            <img src="img/config.png" />
+            <p>adjust your test configuration file<br />(here it's sepc_helper.rb)</p>
+          </section>
+
+          <section>
+            <h3>Searchable models</h3>
+            <img src="img/model.png" />
+            <p>add searchkick to your searchable models and<br />define their search data</p>
+          </section>
+
+          <section>
+            <h3>Search queries</h3>
+            <img src="img/search_query.png" />
+            <p>build search queries</p>
+            <pre><code>
+@query = user input
+if empty
+  @query = "*" # wildcard
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h2>References</h2>
+          <p>
+            Searchkick on GitHub:<br />https://github.com/ankane/searchkick<br /><br />
+            Elastic Search:<br />http://www.elasticsearch.org/
+          </p>
+        </section>
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        viewDistance: 1,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+  </body>
+</html>
