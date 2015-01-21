@@ -91,10 +91,10 @@
           <section>
             <h3>Solution: Part 2</h3>
             <img src="img/tire.png" />
-            <p class="roll-in">
+            <p class="fragment roll-in">
               Option 1: further development of Tire on our own
             </p>
-            <p class="roll-in">
+            <p class="fragment roll-in">
               Option 2: exchanging Tire with an alternative
             </p>
           </section>
@@ -108,12 +108,13 @@
         <section>
           <section>
             <h2>How to implement searchkick in your project</h2>
+            <img src="img/you.jpg" />
           </section>
 
           <section>
-            <h3>What you need</h3>
+            <h3>What you need:</h3>
             <img src="img/elastic-search-logo.jpg" />
-            <p>latest version = less bugs</p>
+            <p class="fragment roll-in">latest version = less bugs</p>
           </section>
 
           <section>
@@ -125,7 +126,7 @@
           <section>
             <h3>Test configuration</h3>
             <img src="img/config.png" />
-            <p>adjust your test configuration file<br />(here it's sepc_helper.rb)</p>
+            <p>we use Rspec, so here it's spec_helper.rb</p>
           </section>
 
           <section>
@@ -139,19 +140,32 @@
             <img src="img/search_query.png" />
             <p>build search queries</p>
             <pre><code>
+# pseudo code
 @query = user input
 if empty
   @query = "*" # wildcard
             </code></pre>
           </section>
+
+          <section>
+            <h3>Hint</h3>
+            <img src="img/big-data.jpeg" />
+          </section>
         </section>
 
         <section>
-          <h2>References</h2>
-          <p>
-            Searchkick on GitHub:<br />https://github.com/ankane/searchkick<br /><br />
-            Elastic Search:<br />http://www.elasticsearch.org/
-          </p>
+          <section>
+            <img src="img/references.jpg" />
+          </section>
+          <section>
+            <h3>searchkick on</h3>
+            <img src="img/github.png" alt="GitHub" />
+            <p><a href="https://github.com/ankane/searchkick">https://github.com/ankane/searchkick</a></p>
+          </section>
+          <section>
+            <img src="img/elastic-search-logo.jpg" /><br />
+            <p><a href="http://www.elasticsearch.org/">http://www.elasticsearch.org/</a></p>
+          </section>
         </section>
       </div>
 
@@ -161,7 +175,6 @@ if empty
     <script src="js/reveal.min.js"></script>
 
     <script>
-
       // Full list of configuration options available here:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
